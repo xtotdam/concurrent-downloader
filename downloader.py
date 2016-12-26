@@ -66,7 +66,7 @@ Options:
     --dir=str           Directory to download to (default=links-file)
     --randomnames       Give downloaded files random names (default={})
     --wait=float        Max time to wait between connections (default={})
-'''.format(__name__, threads, randomNames, wait)
+'''.format(sys.argv[0], threads, randomNames, wait)
         exit()
 
     elif arg.startswith('--threads='):      threads = int(arg.split('=')[-1])
