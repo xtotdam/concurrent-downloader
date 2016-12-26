@@ -28,4 +28,4 @@ link3 [name3]
 ...
 ```
 
-So, link `link1` will be downloaded either to default directory, if `name1` was not given, or it will be `name1` in current working directory.
+So, link `link1` will be downloaded either to default directory, if `name1` was not given, or it will be `name1` in current working directory (`--dir` option will not affect it, specify directory explicitly).
