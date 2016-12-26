@@ -7,8 +7,12 @@ import time
 
 from colorama import init
 
-import eventlet
-from eventlet.green import urllib2
+try:
+    import eventlet
+    from eventlet.green import urllib2
+except ImportError:
+    print 'eventlet is needed'
+    exit()
 
 init()
 
@@ -30,10 +34,10 @@ def fetchFiles(name, url):
         time.sleep(random.random() * wait)
         opener = urllib2.build_opener()
         opener.addheaders = [
-                             ('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'),
-                             ('Accept-Encoding', 'gzip, deflate'),
+                             #('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'),
+                             #('Accept-Encoding', 'gzip, deflate'),
                              ('Connection', 'close'),
-                             ('Proxy-Authorization', randomHexString()),
+                             #('Proxy-Authorization', randomHexString()),
                              ('User-agent', randomUA())
                              ]
         try:
